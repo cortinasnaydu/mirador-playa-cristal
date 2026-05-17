@@ -1,233 +1,288 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  />
 
   <title>Mirador Playa Cristal Tayrona</title>
 
   <meta
     name="description"
-    content="Mirador Playa Cristal Tayrona: alojamiento y vista natural cerca de Playa Cristal y el Parque Tayrona."
+    content="Mirador Playa Cristal Tayrona: eco lodging and ocean views near Playa Cristal and Tayrona National Park."
   />
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+  <link rel="stylesheet" href="css/styles.css" />
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      color: #17324d;
-      background: #f7f4ed;
-      line-height: 1.5;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .hero {
-      min-height: 100vh;
-      padding: 24px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      background:
-        linear-gradient(rgba(0, 45, 65, 0.55), rgba(0, 45, 65, 0.55)),
-        url("images/hero.jpg");
-      background-size: cover;
-      background-position: center;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 720px;
-    }
-
-    .eyebrow {
-      margin-bottom: 12px;
-      font-size: 0.9rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      font-weight: bold;
-    }
-
-    h1 {
-      margin: 0 0 18px;
-      font-size: clamp(2.4rem, 8vw, 5rem);
-      line-height: 1;
-    }
-
-    .hero p {
-      margin: 0 auto 28px;
-      max-width: 560px;
-      font-size: clamp(1.05rem, 4vw, 1.35rem);
-    }
-
-    .button {
-      display: inline-block;
-      padding: 15px 24px;
-      border-radius: 999px;
-      background: #25d366;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-
-    .section {
-      padding: 56px 20px;
-    }
-
-    .container {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .section h2 {
-      margin: 0 0 16px;
-      font-size: clamp(1.8rem, 6vw, 3rem);
-      line-height: 1.1;
-      color: #0b4f6c;
-    }
-
-    .intro {
-      max-width: 720px;
-      font-size: 1.1rem;
-    }
-
-    .cards {
-      display: grid;
-      gap: 18px;
-      margin-top: 28px;
-    }
-
-    .card {
-      padding: 24px;
-      border-radius: 18px;
-      background: white;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-    }
-
-    .card h3 {
-      margin: 0 0 8px;
-      color: #0b4f6c;
-    }
-
-    .card p {
-      margin: 0;
-    }
-
-    .cta {
-      text-align: center;
-      background: #0b4f6c;
-      color: white;
-    }
-
-    .cta h2 {
-      color: white;
-    }
-
-    .cta p {
-      max-width: 620px;
-      margin: 0 auto 24px;
-      font-size: 1.1rem;
-    }
-
-    footer {
-      padding: 24px 20px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #5d6f7c;
-      background: #fff;
-    }
-
-    @media (min-width: 760px) {
-      .cards {
-        grid-template-columns: repeat(3, 1fr);
-      }
-
-      .section {
-        padding: 80px 32px;
-      }
-
-      .hero {
-        padding: 48px;
-      }
-    }
-  </style>
 </head>
 
 <body>
 
-  <header class="hero">
-    <div class="hero-content">
-      <div class="eyebrow">Santa Marta · Tayrona • Playa Cristal</div>
+  <div class="language-toggle">
 
-      <h1>Mirador Playa Cristal Tayrona</h1>
+    <button onclick="setLanguage('es')">
+      ES
+    </button>
+
+    <button onclick="setLanguage('en')">
+      EN
+    </button>
+
+  </div>
+
+  <header class="hero">
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+      <div class="eyebrow">
+
+        <span class="lang-es">
+          Santa Marta · Tayrona · Playa Cristal
+        </span>
+
+        <span class="lang-en">
+          Santa Marta · Tayrona · Playa Cristal
+        </span>
+
+      </div>
+
+      <h1>
+
+        <span class="lang-es">
+          Mirador Playa Cristal Tayrona
+        </span>
+
+        <span class="lang-en">
+          Mirador Playa Cristal Tayrona
+        </span>
+
+      </h1>
 
       <p>
-        Un lugar tranquilo para descansar, disfrutar la naturaleza y vivir la belleza de Playa Cristal.
+
+        <span class="lang-es">
+          Un lugar tranquilo para descansar y disfrutar la belleza natural del Caribe colombiano.
+        </span>
+
+        <span class="lang-en">
+          A peaceful place to relax and experience the natural beauty of the Colombian Caribbean.
+        </span>
+
       </p>
 
-      <a class="button" href="https://wa.me/57XXXXXXXXXX">
-        Contactar por WhatsApp
+      <a
+        class="button"
+        href="https://wa.me/57XXXXXXXXXX"
+        target="_blank"
+      >
+
+        <span class="lang-es">
+          Contactar por WhatsApp
+        </span>
+
+        <span class="lang-en">
+          Contact on WhatsApp
+        </span>
+
       </a>
+
     </div>
+
   </header>
 
   <main>
 
     <section class="section">
+
       <div class="container">
-        <h2>Vista, naturaleza y descanso cerca del Tayrona</h2>
+
+        <h2>
+
+          <span class="lang-es">
+            Vista, naturaleza y descanso
+          </span>
+
+          <span class="lang-en">
+            Views, nature, and relaxation
+          </span>
+
+        </h2>
 
         <p class="intro">
-          Mirador Playa Cristal Tayrona ofrece una experiencia sencilla y natural cerca de una de las playas más hermosas del Caribe colombiano.
+
+          <span class="lang-es">
+            Mirador Playa Cristal Tayrona ofrece una experiencia sencilla y natural cerca de una de las playas más hermosas del Caribe colombiano.
+          </span>
+
+          <span class="lang-en">
+            Mirador Playa Cristal Tayrona offers a peaceful and authentic experience near one of the most beautiful beaches in the Colombian Caribbean.
+          </span>
+
         </p>
 
         <div class="cards">
+
           <div class="card">
-            <h3>Ubicación natural</h3>
-            <p>Cerca de Playa Cristal y el Parque Tayrona, rodeado de paisaje, mar y montaña.</p>
+
+            <h3>
+
+              <span class="lang-es">
+                Ubicación natural
+              </span>
+
+              <span class="lang-en">
+                Natural location
+              </span>
+
+            </h3>
+
+            <p>
+
+              <span class="lang-es">
+                Cerca de Playa Cristal y el Parque Tayrona.
+              </span>
+
+              <span class="lang-en">
+                Near Playa Cristal and Tayrona National Park.
+              </span>
+
+            </p>
+
           </div>
 
           <div class="card">
-            <h3>Ambiente tranquilo</h3>
-            <p>Ideal para descansar, desconectarse y disfrutar una experiencia auténtica en la zona.</p>
+
+            <h3>
+
+              <span class="lang-es">
+                Ambiente tranquilo
+              </span>
+
+              <span class="lang-en">
+                Peaceful atmosphere
+              </span>
+
+            </h3>
+
+            <p>
+
+              <span class="lang-es">
+                Ideal para descansar y disfrutar la naturaleza.
+              </span>
+
+              <span class="lang-en">
+                Perfect for relaxing and enjoying nature.
+              </span>
+
+            </p>
+
           </div>
 
           <div class="card">
-            <h3>Reserva fácil</h3>
-            <p>Escríbenos directamente por WhatsApp para consultar disponibilidad y precios.</p>
+
+            <h3>
+
+              <span class="lang-es">
+                Reserva fácil
+              </span>
+
+              <span class="lang-en">
+                Easy booking
+              </span>
+
+            </h3>
+
+            <p>
+
+              <span class="lang-es">
+                Escríbenos directamente por WhatsApp.
+              </span>
+
+              <span class="lang-en">
+                Message us directly on WhatsApp.
+              </span>
+
+            </p>
+
           </div>
+
         </div>
+
       </div>
+
     </section>
 
     <section class="section cta">
+
       <div class="container">
-        <h2>¿Quieres reservar o hacer una pregunta?</h2>
+
+        <h2>
+
+          <span class="lang-es">
+            ¿Quieres reservar?
+          </span>
+
+          <span class="lang-en">
+            Ready to visit?
+          </span>
+
+        </h2>
 
         <p>
-          Escríbenos por WhatsApp y te ayudamos con disponibilidad, precios y detalles para tu visita.
+
+          <span class="lang-es">
+            Contáctanos para disponibilidad, precios y más información.
+          </span>
+
+          <span class="lang-en">
+            Contact us for availability, pricing, and more information.
+          </span>
+
         </p>
 
-        <a class="button" href="https://wa.me/57XXXXXXXXXX">
-          Hablar por WhatsApp
+        <a
+          class="button"
+          href="https://wa.me/57XXXXXXXXXX"
+          target="_blank"
+        >
+
+          <span class="lang-es">
+            Hablar por WhatsApp
+          </span>
+
+          <span class="lang-en">
+            Chat on WhatsApp
+          </span>
+
         </a>
+
       </div>
+
     </section>
 
   </main>
 
   <footer>
-    © 2026 Mirador Playa Cristal Tayrona
+
+    <span class="lang-es">
+      © 2026 Mirador Playa Cristal Tayrona
+    </span>
+
+    <span class="lang-en">
+      © 2026 Mirador Playa Cristal Tayrona
+    </span>
+
   </footer>
 
+  <script src="js/script.js"></script>
+
 </body>
+
 </html>
