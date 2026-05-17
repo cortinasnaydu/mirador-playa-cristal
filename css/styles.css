@@ -1,1 +1,169 @@
+* {
+  box-sizing: border-box;
+}
 
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #17324d;
+  background: #f7f4ed;
+  line-height: 1.5;
+}
+
+.language-toggle {
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  z-index: 1000;
+  display: flex;
+  gap: 8px;
+}
+
+.language-toggle button {
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0b4f6c;
+  padding: 8px 12px;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  position: relative;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url("../images/mirador-playa-cristal-main.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 45, 65, 0.55);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.eyebrow {
+  margin-bottom: 12px;
+  font-size: 0.9rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-size: clamp(2.4rem, 8vw, 5rem);
+  line-height: 1;
+}
+
+.hero p {
+  margin: 0 auto 28px;
+  max-width: 560px;
+  font-size: clamp(1.05rem, 4vw, 1.35rem);
+}
+
+.button {
+  display: inline-block;
+  padding: 15px 24px;
+  border-radius: 999px;
+  background: #25d366;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.section {
+  padding: 56px 20px;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.section h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.8rem, 6vw, 3rem);
+  line-height: 1.1;
+  color: #0b4f6c;
+}
+
+.intro {
+  max-width: 720px;
+  font-size: 1.1rem;
+}
+
+.cards {
+  display: grid;
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.card {
+  padding: 24px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.card h3 {
+  margin: 0 0 8px;
+  color: #0b4f6c;
+}
+
+.card p {
+  margin: 0;
+}
+
+.cta {
+  text-align: center;
+  background: #0b4f6c;
+  color: white;
+}
+
+.cta h2 {
+  color: white;
+}
+
+.cta p {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  font-size: 1.1rem;
+}
+
+footer {
+  padding: 24px 20px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #5d6f7c;
+  background: white;
+}
+
+@media (min-width: 760px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .section {
+    padding: 80px 32px;
+  }
+
+  .hero {
+    padding: 48px;
+  }
+}
