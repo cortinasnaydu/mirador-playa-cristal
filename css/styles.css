@@ -45,7 +45,7 @@ a {
   padding: 40px 20px;
 
   background-image:
-    url("../images/mirador-playa-cristal-main.jpg");
+    url("../images/chairs-overlook-bay.jpg");
 
   background-size: cover;
   background-position: center;
@@ -122,11 +122,10 @@ h1 {
 }
 
 .whatsapp-button {
-  border: 0;
+  border: 1px solid #1c1e21;
   cursor: pointer;
   font: inherit;
   background-color: #25d366;
-  border: 1px solid #1C1E21;
   color: #1c1e21;
 }
 
