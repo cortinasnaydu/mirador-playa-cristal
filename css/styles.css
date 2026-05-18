@@ -24,6 +24,28 @@ body {
   color: white;
 }
 
+.translate-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  border-radius: 999px;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(8px);
+
+  font-size: 1.1rem;
+  text-decoration: none;
+
+  transition: background 0.2s ease;
+}
+
+.translate-icon:hover {
+  background: rgba(255,255,255,0.25);
+}
 
 .language-toggle button {
   border: none;
