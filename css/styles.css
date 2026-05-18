@@ -47,7 +47,7 @@ body {
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 45, 65, 0.55);
+  background: rgb(0 0 0 / 35%);
 }
 
 .hero-content {
