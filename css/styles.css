@@ -126,6 +126,7 @@ h1 {
   cursor: pointer;
   font: inherit;
   color: #25d366;
+  border: 1px solid #1C1E21;
 }
 
 .language-toggle {
