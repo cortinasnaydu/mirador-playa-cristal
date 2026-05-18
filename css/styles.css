@@ -121,6 +121,12 @@ h1 {
   opacity: 0.92;
 }
 
+.whatsapp-button {
+  border: 0;
+  cursor: pointer;
+  font: inherit;
+}
+
 .language-toggle {
   position: absolute;
 
