@@ -38,6 +38,16 @@ body {
   justify-content: center;
   text-align: center;
   background-image: url("../images/mirador-playa-cristal-main.jpg");
+  background-image: url("../images/beach-coral.jpeg");
+  background-image: url("../images/beach-swimmers.jpeg");
+  background-image: url("../images/beach-view-from-steps.jpeg");
+  background-image: url("../images/chairs-overlook-bay.jpeg");
+  background-image: url("../images/dining-room.jpeg");
+  background-image: url("../images/far-shot-peninsula.jpeg");
+  background-image: url("../images/ladies-sunset.jpeg");
+  background-image: url("../images/overhead-quiet");
+  background-image: url("../images/sunset-only.jpeg");
+
   background-size: cover;
   background-position: center;
   color: white;
