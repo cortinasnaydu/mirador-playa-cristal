@@ -8,7 +8,6 @@ html {
 
 body {
   margin: 0;
-
   font-family:
     -apple-system,
     BlinkMacSystemFont,
@@ -131,10 +130,8 @@ h1 {
 
 .language-toggle {
   position: absolute;
-
   top: 20px;
   right: 20px;
-
   z-index: 20;
 }
 
@@ -142,22 +139,15 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-
   width: 44px;
   height: 44px;
-
   border-radius: 999px;
-
   background: rgba(255, 255, 255, 0.16);
-
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-
   text-decoration: none;
-
   font-size: 1.15rem;
   line-height: 1;
-
   transition:
     background 0.2s ease,
     transform 0.2s ease;
@@ -171,80 +161,68 @@ h1 {
 
 .section {
   padding: 90px 20px;
-
   background: #ffffff;
-
   color: #111111;
 }
 
 .container {
   max-width: 1100px;
-
   margin: 0 auto;
+}
+
+.photo-slider-section .container {
+  max-width: 1370px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .section h2 {
   margin-top: 0;
   margin-bottom: 20px;
-
   text-align: center;
-
   font-size: clamp(2rem, 5vw, 3rem);
 }
 
 .intro {
   max-width: 760px;
-
   margin: 0 auto 50px;
-
   text-align: center;
-
   font-size: 1.1rem;
-
   color: #444444;
 }
 
 .cards {
   display: grid;
-
   grid-template-columns:
     repeat(auto-fit, minmax(240px, 1fr));
-
   gap: 24px;
 }
 
 .card {
   padding: 32px;
-
   border-radius: 24px;
-
   background: #f5f7fa;
 }
 
 .card h3 {
   margin-top: 0;
   margin-bottom: 12px;
-
   font-size: 1.25rem;
 }
 
 .card p {
   margin: 0;
-
   color: #555555;
 }
 
 .cta {
   background: #0f1720;
-
   color: #ffffff;
-
   text-align: center;
 }
 
 .cta p {
   max-width: 640px;
-
   margin:
     0 auto
     32px;
@@ -252,21 +230,15 @@ h1 {
 
 footer {
   padding: 24px 20px;
-
   text-align: center;
-
   font-size: 0.95rem;
-
   background: #081018;
-
   color: rgba(255, 255, 255, 0.7);
 }
 
 @media (max-width: 640px) {
-
   .hero {
     min-height: 100vh;
-
     padding:
       120px 20px
       80px;
@@ -279,13 +251,12 @@ footer {
   .section {
     padding: 70px 20px;
   }
-
 }
 
 /* Begin Slider */
 
 .photo-slider-section {
-  padding: 56px 0 24px;
+  padding: 24px 0 24px;
   background: #0f1720;
 }
 .photo-slider {
