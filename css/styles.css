@@ -13,11 +13,8 @@ body {
     BlinkMacSystemFont,
     "Segoe UI",
     sans-serif;
-
   line-height: 1.6;
-
   color: #ffffff;
-
   background: #0f1720;
 }
 
@@ -32,20 +29,14 @@ a {
 
 .hero {
   position: relative;
-
   min-height: 100vh;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   text-align: center;
-
   padding: 40px 20px;
-
   background-image:
     url("../images/chairs-overlook-bay.jpeg");
-
   background-size: cover;
   background-position: center;
 }
@@ -53,7 +44,6 @@ a {
 .hero-overlay {
   position: absolute;
   inset: 0;
-
   background:
     linear-gradient(
       to bottom,
@@ -65,54 +55,50 @@ a {
 .hero-content {
   position: relative;
   z-index: 2;
-
   max-width: 720px;
 }
 
 .eyebrow {
   margin-bottom: 18px;
-
   font-size: 0.9rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-
   opacity: 0.9;
 }
 
 h1 {
   margin: 0 0 20px;
-
   font-size: clamp(2.5rem, 7vw, 5rem);
   line-height: 1.05;
 }
 
 .hero p {
   margin: 0 auto 32px;
-
   max-width: 640px;
-
   font-size: 1.15rem;
-
   opacity: 0.95;
 }
 
 .button {
-  display: inline-block;
-
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
   padding: 14px 28px;
-
   border-radius: 999px;
-
-  background: #ffffff;
+  background: #25d366;
+  border: 1px solid #1C1E21;
   color: #111111;
-
   font-weight: 600;
-
   text-decoration: none;
-
   transition:
     transform 0.2s ease,
     opacity 0.2s ease;
+}
+
+.button-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
 }
 
 .button:hover {
@@ -155,7 +141,6 @@ h1 {
 
 .translate-icon:hover {
   background: rgba(255, 255, 255, 0.26);
-
   transform: translateY(-1px);
 }
 
