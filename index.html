@@ -1,288 +1,1106 @@
-<!DOCTYPE html>
-<html lang="es">
-
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mirador Playa Cristal</title>
+  <meta name="description" content="Mirador Playa Cristal - a peaceful stay near Tayrona National Natural Park with ocean views, local food, snorkeling, hiking, massage, and easy WhatsApp booking." />
 
-  <meta charset="UTF-8" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  />
+  <style>
+    :root {
+      --green-950: #07130c;
+      --green-900: #0d1f12;
+      --green-800: #17351f;
+      --green-700: #24482b;
+      --leaf: #9ccc3c;
+      --cream: #f6efe1;
+      --cream-2: #fff9ed;
+      --sand: #e8d9ba;
+      --ink: #172016;
+      --muted: #5f6658;
+      --white: #ffffff;
+      --whatsapp: #25d366;
+      --shadow: 0 18px 45px rgba(0, 0, 0, 0.18);
+      --soft-shadow: 0 10px 25px rgba(37, 52, 30, 0.12);
+      --radius-lg: 26px;
+      --radius-md: 18px;
+      --max: 1180px;
+    }
 
-  <title>Mirador Playa Cristal Tayrona</title>
+    * {
+      box-sizing: border-box;
+    }
 
-  <meta
-    name="description"
-    content="Mirador Playa Cristal Tayrona: eco lodging and ocean views on Playa Cristal in Tayrona National Park."
-  />
+    html {
+      scroll-behavior: smooth;
+    }
 
-  <link rel="stylesheet" href="css/styles.css" />
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.6;
+    }
 
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page-shell {
+      overflow: hidden;
+      background:
+        radial-gradient(circle at top left, rgba(156, 204, 60, 0.12), transparent 30%),
+        linear-gradient(180deg, #fff7e8 0%, var(--cream) 48%, #f3ead8 100%);
+    }
+
+    .site-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(7, 19, 12, 0.92);
+      backdrop-filter: blur(12px);
+      color: var(--white);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: 0.03em;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(156, 204, 60, 0.65);
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--leaf);
+      font-size: 24px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      font-size: 0.93rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      opacity: 0.88;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: #c7ec65;
+    }
+
+    .lang-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+    }
+
+    .lang-toggle button {
+      border: 0;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: transparent;
+      color: var(--white);
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 0.78rem;
+    }
+
+    .lang-toggle button.active {
+      background: var(--white);
+      color: var(--green-900);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 22px;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 12px 25px rgba(37, 211, 102, 0.24);
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 30px rgba(37, 211, 102, 0.30);
+    }
+
+    .btn-whatsapp {
+      color: #ffffff;
+      background: var(--whatsapp);
+    }
+
+    .btn-whatsapp:hover {
+      background: #20bd5a;
+    }
+
+    .hero {
+      min-height: 620px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      padding: 145px 0 92px;
+      background:
+        linear-gradient(90deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.40) 42%, rgba(0, 0, 0, 0.10) 100%),
+        linear-gradient(180deg, rgba(0, 0, 0, 0.42) 0%, rgba(0, 0, 0, 0.05) 50%, rgba(0, 0, 0, 0.72) 100%),
+        url("images/mirador-playa-cristal-main.jpg") center / cover no-repeat;
+    }
+
+    .hero-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero-copy {
+      width: min(540px, 100%);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #d9f18a;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero h1,
+    .section-title,
+    .experience-copy h2,
+    .cta h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 0.98;
+      margin: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(3.2rem, 8vw, 6.6rem);
+      max-width: 620px;
+      letter-spacing: -0.055em;
+      text-wrap: balance;
+    }
+
+    .ornament {
+      width: 210px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--leaf), transparent);
+      margin: 28px 0 22px;
+      position: relative;
+    }
+
+    .ornament::after {
+      content: "leaf";
+      position: absolute;
+      top: -13px;
+      left: 88px;
+      color: var(--leaf);
+      font-size: 0.76rem;
+      letter-spacing: 0.12em;
+    }
+
+    .hero p {
+      font-size: clamp(1.04rem, 2vw, 1.26rem);
+      max-width: 510px;
+      margin: 0 0 26px;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .gallery-band {
+      position: relative;
+      z-index: 5;
+      margin-top: -70px;
+    }
+
+    .gallery-card {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 14px;
+      background: rgba(10, 25, 14, 0.94);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      position: relative;
+    }
+
+    .slider-window {
+      overflow: hidden;
+      border-radius: 18px;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 14px;
+      transform: translateX(0);
+      transition: transform 650ms ease;
+    }
+
+    .slide {
+      flex: 0 0 calc((100% - 28px) / 3);
+      height: 210px;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #d5d0bd;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 50px;
+      height: 50px;
+      border: 0;
+      border-radius: 999px;
+      background: rgba(23, 53, 31, 0.88);
+      color: var(--white);
+      font-size: 1.7rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+    }
+
+    .slider-btn.prev {
+      left: -18px;
+    }
+
+    .slider-btn.next {
+      right: -18px;
+    }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 9px;
+      margin-top: 14px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.42);
+    }
+
+    .dot.active {
+      background: var(--leaf);
+    }
+
+    section {
+      padding: 66px 0;
+    }
+
+    .section-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--ink);
+      letter-spacing: -0.03em;
+    }
+
+    .section-subtitle {
+      max-width: 620px;
+      margin: 13px auto 0;
+      color: var(--muted);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .feature-card {
+      min-height: 198px;
+      padding: 28px 24px 25px;
+      border-radius: var(--radius-md);
+      background: rgba(255, 249, 237, 0.88);
+      border: 1px solid rgba(89, 108, 63, 0.16);
+      box-shadow: var(--soft-shadow);
+      text-align: center;
+    }
+
+    .feature-icon {
+      width: 54px;
+      height: 54px;
+      margin: 0 auto 13px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: var(--green-800);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .feature-card h3 {
+      margin: 0 0 9px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.34rem;
+      line-height: 1.1;
+    }
+
+    .feature-card p {
+      margin: 0 auto;
+      max-width: 280px;
+      color: #3f463a;
+      font-size: 0.96rem;
+    }
+
+    .experience-panel {
+      display: grid;
+      grid-template-columns: 1fr 1.25fr;
+      gap: 0;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--green-950), var(--green-800));
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .experience-image {
+      min-height: 380px;
+      background: url("images/room-view.jpg") center / cover no-repeat;
+    }
+
+    .experience-copy {
+      padding: 52px 48px;
+    }
+
+    .experience-copy h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      letter-spacing: -0.04em;
+    }
+
+    .experience-copy p {
+      margin: 20px 0 34px;
+      color: rgba(255, 255, 255, 0.86);
+      max-width: 620px;
+    }
+
+    .mini-benefits {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+
+    .mini-benefit {
+      padding: 6px 14px 0;
+      border-left: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .mini-benefit:first-child {
+      border-left: 0;
+    }
+
+    .mini-benefit .mini-icon {
+      color: var(--leaf);
+      font-size: 2rem;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .mini-benefit strong {
+      display: block;
+      margin-bottom: 4px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.17rem;
+    }
+
+    .mini-benefit span {
+      color: rgba(255, 255, 255, 0.76);
+      font-size: 0.93rem;
+    }
+
+    .directions {
+      padding-top: 38px;
+      background: rgba(255, 249, 237, 0.58);
+    }
+
+    .directions-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.15fr 0.58fr;
+      gap: 26px;
+      align-items: stretch;
+    }
+
+    .steps-card,
+    .map-card,
+    .tips-card {
+      border-radius: var(--radius-md);
+      background: rgba(255, 249, 237, 0.92);
+      border: 1px solid rgba(89, 108, 63, 0.16);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .steps-card {
+      padding: 26px;
+    }
+
+    .steps-card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .step {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .step-num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green-800);
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .step strong {
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .map-card {
+      min-height: 330px;
+      padding: 16px;
+    }
+
+    .map-illustration {
+      height: 100%;
+      min-height: 300px;
+      border-radius: 15px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(143, 190, 186, 0.55), rgba(242, 232, 198, 0.88)),
+        url("images/map-placeholder.jpg") center / cover no-repeat;
+    }
+
+    .route-line {
+      position: absolute;
+      inset: 42px 58px 58px 58px;
+      border-left: 4px dashed rgba(23, 53, 31, 0.74);
+      border-bottom: 4px dashed rgba(23, 53, 31, 0.74);
+      border-radius: 60px;
+      transform: rotate(-18deg);
+    }
+
+    .map-pin {
+      position: absolute;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      background: rgba(7, 19, 12, 0.86);
+      color: #fff;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .map-pin.start {
+      left: 32px;
+      bottom: 34px;
+    }
+
+    .map-pin.end {
+      right: 28px;
+      top: 32px;
+    }
+
+    .map-note {
+      position: absolute;
+      left: 44%;
+      top: 44%;
+      padding: 9px 12px;
+      border-radius: 12px;
+      background: rgba(255, 249, 237, 0.86);
+      font-weight: 800;
+      color: var(--green-900);
+      box-shadow: var(--soft-shadow);
+    }
+
+    .tips-card {
+      padding: 24px;
+      background: #dfe8c2;
+    }
+
+    .tips-card h3 {
+      margin: 0 0 14px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.5rem;
+    }
+
+    .tips-card ul {
+      margin: 0;
+      padding-left: 19px;
+      color: #33402f;
+      font-size: 0.94rem;
+    }
+
+    .tips-card li + li {
+      margin-top: 10px;
+    }
+
+    .cta-band {
+      padding: 38px 0;
+      background:
+        radial-gradient(circle at left, rgba(156, 204, 60, 0.17), transparent 24%),
+        linear-gradient(90deg, #efe1c5, #fff6e6 42%, #efe1c5);
+    }
+
+    .cta {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      letter-spacing: -0.035em;
+    }
+
+    .cta p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      background: var(--green-950);
+      color: var(--white);
+      padding: 34px 0;
+    }
+
+    .footer-inner {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 22px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.92rem;
+    }
+
+    .lang-es [data-en],
+    .lang-en [data-es] {
+      display: none;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links {
+        display: none;
+      }
+
+      .slide {
+        flex-basis: calc((100% - 14px) / 2);
+      }
+
+      .features-grid,
+      .directions-layout,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .experience-image {
+        min-height: 310px;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .nav-wrap {
+        width: min(100% - 28px, var(--max));
+        height: 72px;
+      }
+
+      .brand {
+        font-size: 0.92rem;
+      }
+
+      .brand-mark {
+        width: 36px;
+        height: 36px;
+      }
+
+      .lang-toggle {
+        display: none;
+      }
+
+      .hero {
+        min-height: 560px;
+        padding-top: 110px;
+      }
+
+      .gallery-card,
+      .section-inner,
+      .cta,
+      .footer-inner {
+        width: min(100% - 28px, var(--max));
+      }
+
+      .slide {
+        flex-basis: 100%;
+        height: 235px;
+      }
+
+      .slider-btn {
+        width: 42px;
+        height: 42px;
+      }
+
+      .slider-btn.prev {
+        left: 4px;
+      }
+
+      .slider-btn.next {
+        right: 4px;
+      }
+
+      .features-grid,
+      .mini-benefits {
+        grid-template-columns: 1fr;
+      }
+
+      .mini-benefit,
+      .mini-benefit:first-child {
+        border-left: 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.14);
+        padding-top: 20px;
+      }
+
+      .mini-benefit:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+
+      .experience-copy {
+        padding: 36px 24px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
 </head>
-
-<body>
-
-  <div class="language-toggle">
-
-    <button onclick="setLanguage('es')">
-      ES
-    </button>
-
-    <button onclick="setLanguage('en')">
-      EN
-    </button>
-
-  </div>
-
-  <header class="hero">
-
-    <div class="hero-overlay"></div>
-
-    <div class="hero-content">
-
-      <div class="eyebrow">
-
-        <span class="lang-es">
-          Santa Marta · Tayrona · Playa&nbsp;Cristal
-        </span>
-
-        <span class="lang-en">
-          Santa Marta · Tayrona · Playa&nbsp;Cristal
-        </span>
-
-      </div>
-
-      <h1>
-
-        <span class="lang-es">
-          Mirador Playa Cristal Tayrona
-        </span>
-
-        <span class="lang-en">
-          Mirador Playa Cristal Tayrona
-        </span>
-
-      </h1>
-
-      <p>
-
-        <span class="lang-es">
-          Un lugar tranquilo para descansar y disfrutar la belleza natural del Caribe&nbsp;colombiano.
-        </span>
-
-        <span class="lang-en">
-          A peaceful place to experience the natural beauty of the Colombian&nbsp;Caribbean.
-        </span>
-
-      </p>
-
-      <a
-        class="button"
-        href="https://wa.me/573003465970"
-        target="_blank"
-      >
-
-        <span class="lang-es">
-          Contactar por WhatsApp
-        </span>
-
-        <span class="lang-en">
-          Contact on WhatsApp
-        </span>
-
-      </a>
-
-    </div>
-
-  </header>
-
-  <main>
-
-    <section class="section">
-
-      <div class="container">
-
-        <h2>
-
-          <span class="lang-es">
-            Vista, naturaleza y descanso
-          </span>
-
-          <span class="lang-en">
-            Views, nature, and relaxation
-          </span>
-
-        </h2>
-
-        <p class="intro">
-
-          <span class="lang-es">
-            Mirador Playa Cristal Tayrona ofrece una experiencia auténtica y tranquila a pocos pasos de una de las playas más visitadas del Caribe colombiano.
-          </span>
-
-          <span class="lang-en">
-            Mirador Playa Cristal Tayrona offers a peaceful and authentic experience just steps away from one of the most visited beaches in the Colombian Caribbean.
-          </span>
-
-        </p>
-
-        <div class="cards">
-
-          <div class="card">
-
-            <h3>
-
-              <span class="lang-es">
-                Ubicación natural
-              </span>
-
-              <span class="lang-en">
-                Natural location
-              </span>
-
-            </h3>
-
-            <p>
-
-              <span class="lang-es">
-                En Playa Cristal, en el Parque Tayrona.
-              </span>
-
-              <span class="lang-en">
-                At Playa Cristal in Tayrona National Park.
-              </span>
-
-            </p>
-
-          </div>
-
-          <div class="card">
-
-            <h3>
-
-              <span class="lang-es">
-                Ambiente tranquilo
-              </span>
-
-              <span class="lang-en">
-                Peaceful atmosphere
-              </span>
-
-            </h3>
-
-            <p>
-
-              <span class="lang-es">
-                Ideal para descansar y disfrutar la naturaleza.
-              </span>
-
-              <span class="lang-en">
-                Perfect for relaxing and enjoying nature.
-              </span>
-
-            </p>
-
-          </div>
-
-          <div class="card">
-
-            <h3>
-
-              <span class="lang-es">
-                Reserva fácil
-              </span>
-
-              <span class="lang-en">
-                Easy booking
-              </span>
-
-            </h3>
-
-            <p>
-
-              <span class="lang-es">
-                Escríbenos directamente por WhatsApp.
-              </span>
-
-              <span class="lang-en">
-                Message us directly on WhatsApp.
-              </span>
-
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-    <section class="section cta">
-
-      <div class="container">
-
-        <h2>
-
-          <span class="lang-es">
-            ¿Quieres reservar?
-          </span>
-
-          <span class="lang-en">
-            Ready to visit?
-          </span>
-
-        </h2>
-
-        <p>
-
-          <span class="lang-es">
-            Contáctanos para disponibilidad, precios y más información.
-          </span>
-
-          <span class="lang-en">
-            Contact us for availability, pricing, and more information.
-          </span>
-
-        </p>
-
-        <a
-          class="button"
-          href="https://wa.me/573003465970"
-          target="_blank"
-        >
-
-          <span class="lang-es">
-            Hablar por WhatsApp
-          </span>
-
-          <span class="lang-en">
-            Chat on WhatsApp
-          </span>
-
+<body class="lang-en">
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="nav-wrap">
+        <a class="brand" href="#top" aria-label="Mirador Playa Cristal home">
+          <span class="brand-mark">&#127793;</span>
+          <span>Mirador<br>Playa Cristal</span>
         </a>
 
+        <nav class="nav-links" aria-label="Main navigation">
+          <a href="#stay"><span data-en>Our Stay</span><span data-es>Nuestra Estadía</span></a>
+          <a href="#experiences"><span data-en>Experiences</span><span data-es>Experiencias</span></a>
+          <a href="#directions"><span data-en>How to Get Here</span><span data-es>Cómo Llegar</span></a>
+          <a href="#contact"><span data-en>Contact</span><span data-es>Contacto</span></a>
+        </nav>
+
+        <div class="lang-toggle" aria-label="Language selector">
+          <button class="active" type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="es">ES</button>
+        </div>
+
+        <a class="btn btn-whatsapp" href="https://wa.me/570000000000" target="_blank" rel="noopener">
+          <span aria-hidden="true">&#128172;</span>
+          <span data-en>Reserve on WhatsApp</span>
+          <span data-es>Reservar por WhatsApp</span>
+        </a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Mirador Playa Cristal hero">
+        <div class="hero-inner">
+          <div class="hero-copy">
+            <div class="eyebrow"><span data-en>Tayrona National Natural Park</span><span data-es>Parque Nacional Natural Tayrona</span></div>
+            <h1><span data-en>Naturally Spectacular</span><span data-es>Naturalmente Espectacular</span></h1>
+            <div class="ornament" aria-hidden="true"></div>
+            <p>
+              <span data-en>Wake up to the beauty of Tayrona National Natural Park. Rest, explore, and reconnect.</span>
+              <span data-es>Despierta con la belleza del Parque Tayrona. Descansa, explora y reconecta.</span>
+            </p>
+            <a class="btn btn-whatsapp" href="https://wa.me/570000000000" target="_blank" rel="noopener">
+              <span aria-hidden="true">&#128172;</span>
+              <span data-en>Reserve on WhatsApp</span>
+              <span data-es>Reservar por WhatsApp</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <div class="gallery-band" aria-label="Photo gallery">
+        <div class="gallery-card">
+          <button class="slider-btn prev" type="button" aria-label="Previous photo">&#8249;</button>
+          <div class="slider-window">
+            <div class="slider-track" id="sliderTrack">
+              <figure class="slide"><img src="images/gallery-01.jpg" alt="Turquoise water and green mountains near Playa Cristal"></figure>
+              <figure class="slide"><img src="images/gallery-02.jpg" alt="Ocean view from Mirador Playa Cristal"></figure>
+              <figure class="slide"><img src="images/gallery-03.jpg" alt="Terrace with seating and ocean view"></figure>
+              <figure class="slide"><img src="images/gallery-04.jpg" alt="Beach and jungle landscape"></figure>
+              <figure class="slide"><img src="images/gallery-05.jpg" alt="Peaceful room with mosquito net and natural light"></figure>
+              <figure class="slide"><img src="images/gallery-06.jpg" alt="Fresh local food served at Mirador Playa Cristal"></figure>
+              <figure class="slide"><img src="images/gallery-07.jpg" alt="Snorkeling in clear Caribbean water"></figure>
+              <figure class="slide"><img src="images/gallery-08.jpg" alt="Hiking trail surrounded by tropical plants"></figure>
+              <figure class="slide"><img src="images/gallery-09.jpg" alt="Sunset over the water from the lodge"></figure>
+              <figure class="slide"><img src="images/gallery-10.jpg" alt="Relaxing outdoor seating area"></figure>
+            </div>
+          </div>
+          <button class="slider-btn next" type="button" aria-label="Next photo">&#8250;</button>
+          <div class="dots" id="sliderDots" aria-hidden="true"></div>
+        </div>
       </div>
 
-    </section>
+      <section id="experiences">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2 class="section-title"><span data-en>More Than a Stay, It's an Experience</span><span data-es>Más que una estadía, una experiencia</span></h2>
+            <p class="section-subtitle">
+              <span data-en>Enjoy ocean views, local food, clear water, quiet nature, and simple WhatsApp booking.</span>
+              <span data-es>Disfruta vistas al mar, comida local, agua cristalina, naturaleza tranquila y reserva fácil por WhatsApp.</span>
+            </p>
+          </div>
 
-  </main>
+          <div class="features-grid">
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">&#127811;</div>
+              <h3><span data-en>Natural Location</span><span data-es>Ubicación Natural</span></h3>
+              <p><span data-en>Surrounded by jungle and stunning ocean views in Tayrona National Park.</span><span data-es>Rodeado de selva y vistas al mar dentro del Parque Tayrona.</span></p>
+            </article>
 
-  <footer>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">&#127788;</div>
+              <h3><span data-en>Peaceful Atmosphere</span><span data-es>Ambiente Tranquilo</span></h3>
+              <p><span data-en>The perfect place to disconnect, relax, and recharge your energy.</span><span data-es>El lugar perfecto para desconectarte, descansar y recargar energía.</span></p>
+            </article>
 
-<span class="lang-es">
-  © <span class="year"></span> Mirador Playa Cristal Tayrona
-</span>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">&#128197;</div>
+              <h3><span data-en>Easy Booking</span><span data-es>Reserva Fácil</span></h3>
+              <p><span data-en>Reserve quickly and easily through WhatsApp. We're here to help.</span><span data-es>Reserva de forma rápida y sencilla por WhatsApp. Estamos para ayudarte.</span></p>
+            </article>
 
-<span class="lang-en">
-  © <span class="year"></span> Mirador Playa Cristal Tayrona
-</span>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">&#127860;</div>
+              <h3><span data-en>Extensive Menu</span><span data-es>Menú Amplio</span></h3>
+              <p><span data-en>A delicious variety of local and international dishes made with fresh ingredients.</span><span data-es>Una variedad deliciosa de platos locales e internacionales preparados con ingredientes frescos.</span></p>
+            </article>
 
-  </footer>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">&#129343;</div>
+              <h3><span data-en>Snorkeling</span><span data-es>Snorkeling</span></h3>
+              <p><span data-en>Explore crystal-clear waters and vibrant marine life just minutes away.</span><span data-es>Explora aguas cristalinas y vida marina a pocos minutos.</span></p>
+            </article>
 
-  <script src="js/script.js"></script>
+            <article class="feature-card">
+              <div class="feature-icon" aria-hidden="true">&#129406;</div>
+              <h3><span data-en>Hiking & Massage</span><span data-es>Caminata y Masaje</span></h3>
+              <p><span data-en>Hike incredible trails or relax with a massage in the middle of nature.</span><span data-es>Camina por senderos increíbles o relájate con un masaje en medio de la naturaleza.</span></p>
+            </article>
+          </div>
+        </div>
+      </section>
 
+      <section id="stay" aria-label="Your stay section">
+        <div class="section-inner">
+          <div class="experience-panel">
+            <div class="experience-image" role="img" aria-label="Bedroom with ocean and jungle view"></div>
+            <div class="experience-copy">
+              <h2><span data-en>Your Stay, Your Experience</span><span data-es>Tu Estadía, Tu Experiencia</span></h2>
+              <p>
+                <span data-en>Whether you're looking for adventure, relaxation, or a little bit of both, Mirador Playa Cristal is your perfect escape. Enjoy unique experiences, personalized service, and the magic of Tayrona.</span>
+                <span data-es>Ya sea que busques aventura, descanso o un poco de ambos, Mirador Playa Cristal es tu escape perfecto. Disfruta experiencias únicas, atención personalizada y la magia del Tayrona.</span>
+              </p>
+
+              <div class="mini-benefits">
+                <div class="mini-benefit">
+                  <div class="mini-icon" aria-hidden="true">&#9968;</div>
+                  <strong><span data-en>Incredible Views</span><span data-es>Vistas Increíbles</span></strong>
+                  <span><span data-en>Wake up to the ocean and jungle.</span><span data-es>Despierta con mar y selva.</span></span>
+                </div>
+                <div class="mini-benefit">
+                  <div class="mini-icon" aria-hidden="true">&#127793;</div>
+                  <strong><span data-en>Close to Nature</span><span data-es>Cerca de la Naturaleza</span></strong>
+                  <span><span data-en>Jungle, sea, and wildlife all around.</span><span data-es>Selva, mar y fauna alrededor.</span></span>
+                </div>
+                <div class="mini-benefit">
+                  <div class="mini-icon" aria-hidden="true">&#129309;</div>
+                  <strong><span data-en>Personalized Service</span><span data-es>Atención Personalizada</span></strong>
+                  <span><span data-en>We make you feel at home.</span><span data-es>Te hacemos sentir en casa.</span></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="directions" id="directions">
+        <div class="section-inner">
+          <div class="section-heading">
+            <h2 class="section-title"><span data-en>How to Get Here</span><span data-es>Cómo Llegar</span></h2>
+            <p class="section-subtitle">
+              <span data-en>Mirador Playa Cristal is inside Tayrona National Natural Park, just a short walk from beautiful Playa Cristal.</span>
+              <span data-es>Mirador Playa Cristal está dentro del Parque Tayrona, a pocos minutos caminando de Playa Cristal.</span>
+            </p>
+          </div>
+
+          <div class="directions-layout">
+            <div class="steps-card">
+              <div class="step">
+                <div class="step-num">1</div>
+                <div><strong><span data-en>Get to El Zaino</span><span data-es>Llega a El Zaino</span></strong><span data-en>Drive or take a bus to the El Zaino entrance of Tayrona National Park.</span><span data-es>Llega en carro o bus a la entrada El Zaino del Parque Tayrona.</span></div>
+              </div>
+              <div class="step">
+                <div class="step-num">2</div>
+                <div><strong><span data-en>Buy Your Park Ticket</span><span data-es>Compra tu entrada</span></strong><span data-en>Purchase your entrance ticket at the park entrance.</span><span data-es>Compra tu entrada al parque en la taquilla.</span></div>
+              </div>
+              <div class="step">
+                <div class="step-num">3</div>
+                <div><strong><span data-en>Hike to Playa Cristal</span><span data-es>Camina a Playa Cristal</span></strong><span data-en>Follow the main trail for about 30-40 minutes to Playa Cristal.</span><span data-es>Sigue el sendero principal durante unos 30-40 minutos hasta Playa Cristal.</span></div>
+              </div>
+              <div class="step">
+                <div class="step-num">4</div>
+                <div><strong><span data-en>We're Just Steps Away</span><span data-es>Estamos a pocos pasos</span></strong><span data-en>Mirador Playa Cristal is a 2-3 minute walk from the beach.</span><span data-es>Mirador Playa Cristal está a 2-3 minutos caminando desde la playa.</span></div>
+              </div>
+            </div>
+
+            <div class="map-card" aria-label="Illustrated route map">
+              <div class="map-illustration">
+                <div class="route-line" aria-hidden="true"></div>
+                <div class="map-pin start">&#128663; El Zaino</div>
+                <div class="map-pin end">&#128205; Playa Cristal</div>
+                <div class="map-note"><span data-en>30-40 min hike</span><span data-es>30-40 min caminata</span></div>
+              </div>
+            </div>
+
+            <aside class="tips-card">
+              <h3><span data-en>Tips</span><span data-es>Consejos</span></h3>
+              <ul>
+                <li><span data-en>Wear comfortable shoes.</span><span data-es>Usa zapatos cómodos.</span></li>
+                <li><span data-en>Bring water, sunscreen, and insect repellent.</span><span data-es>Lleva agua, bloqueador y repelente.</span></li>
+                <li><span data-en>The trail is well marked and safe.</span><span data-es>El sendero está bien marcado y es seguro.</span></li>
+                <li><span data-en>It is best to start in the morning.</span><span data-es>Es mejor empezar en la mañana.</span></li>
+              </ul>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section class="cta-band" id="contact">
+        <div class="cta">
+          <h2><span data-en>Ready to Experience Mirador Playa Cristal?</span><span data-es>¿Listo para vivir Mirador Playa Cristal?</span></h2>
+          <p><span data-en>Contact us on WhatsApp and let us help you plan your perfect stay.</span><span data-es>Contáctanos por WhatsApp y te ayudamos a planear tu estadía perfecta.</span></p>
+          <a class="btn btn-whatsapp" href="https://wa.me/570000000000" target="_blank" rel="noopener">
+            <span aria-hidden="true">&#128172;</span>
+            <span data-en>Reserve on WhatsApp</span>
+            <span data-es>Reservar por WhatsApp</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <a class="brand" href="#top">
+          <span class="brand-mark">&#127793;</span>
+          <span>Mirador<br>Playa Cristal</span>
+        </a>
+        <div class="footer-links">
+          <a href="#stay"><span data-en>Our Stay</span><span data-es>Nuestra Estadía</span></a>
+          <a href="#experiences"><span data-en>Experiences</span><span data-es>Experiencias</span></a>
+          <a href="#directions"><span data-en>How to Get Here</span><span data-es>Cómo Llegar</span></a>
+          <a href="#contact"><span data-en>Contact</span><span data-es>Contacto</span></a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    const body = document.body;
+    const langButtons = document.querySelectorAll("[data-lang]");
+
+    langButtons.forEach((button) => {
+      button.addEventListener("click", () => {
+        const lang = button.dataset.lang;
+        body.classList.toggle("lang-en", lang === "en");
+        body.classList.toggle("lang-es", lang === "es");
+        document.documentElement.lang = lang;
+
+        langButtons.forEach((item) => item.classList.toggle("active", item === button));
+      });
+    });
+
+    const track = document.querySelector("#sliderTrack");
+    const slides = Array.from(document.querySelectorAll(".slide"));
+    const prevButton = document.querySelector(".slider-btn.prev");
+    const nextButton = document.querySelector(".slider-btn.next");
+    const dotsWrap = document.querySelector("#sliderDots");
+    let currentIndex = 0;
+    let autoplay;
+
+    function visibleSlides() {
+      if (window.innerWidth <= 680) return 1;
+      if (window.innerWidth <= 980) return 2;
+      return 3;
+    }
+
+    function maxIndex() {
+      return Math.max(0, slides.length - visibleSlides());
+    }
+
+    function slideWidth() {
+      const firstSlide = slides[0];
+      const gap = parseFloat(getComputedStyle(track).gap || 0);
+      return firstSlide.getBoundingClientRect().width + gap;
+    }
+
+    function buildDots() {
+      dotsWrap.innerHTML = "";
+      for (let i = 0; i <= maxIndex(); i += 1) {
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        if (i === currentIndex) dot.classList.add("active");
+        dotsWrap.appendChild(dot);
+      }
+    }
+
+    function updateSlider() {
+      currentIndex = Math.min(currentIndex, maxIndex());
+      track.style.transform = `translateX(${-currentIndex * slideWidth()}px)`;
+      Array.from(dotsWrap.children).forEach((dot, index) => {
+        dot.classList.toggle("active", index === currentIndex);
+      });
+    }
+
+    function nextSlide() {
+      currentIndex = currentIndex >= maxIndex() ? 0 : currentIndex + 1;
+      updateSlider();
+    }
+
+    function prevSlide() {
+      currentIndex = currentIndex <= 0 ? maxIndex() : currentIndex - 1;
+      updateSlider();
+    }
+
+    function startAutoplay() {
+      stopAutoplay();
+      autoplay = setInterval(nextSlide, 3600);
+    }
+
+    function stopAutoplay() {
+      if (autoplay) clearInterval(autoplay);
+    }
+
+    prevButton.addEventListener("click", () => {
+      prevSlide();
+      startAutoplay();
+    });
+
+    nextButton.addEventListener("click", () => {
+      nextSlide();
+      startAutoplay();
+    });
+
+    window.addEventListener("resize", () => {
+      buildDots();
+      updateSlider();
+    });
+
+    buildDots();
+    updateSlider();
+    startAutoplay();
+  </script>
 </body>
-
 </html>
