@@ -29,32 +29,22 @@
 
 <body>
 
-  <div class="language-toggle">
-
-    <button onclick="setLanguage('es')">
-      ES
-    </button>
-
-    <button onclick="setLanguage('en')">
-      EN
-    </button>
-
-  </div>
-
   <header class="hero">
     <div class="site-header">
       <a class="site-logo" href="#">
         <img src="images/mirador-logo-white.png" alt="Mirador Playa Cristal" />
       </a>
-      <a
-        class="button header-button"
-        href="https://wa.me/573003465970"
-        target="_blank"
->
-        <img src="images/whatsapp-48.png" alt="" class="button-icon" />
-        <span class="lang-es">Reservar</span>
-        <span class="lang-en">Reserve</span>
-      </a>
+      <div class="site-header-actions">
+        <div class="language-toggle header-language-toggle">
+          <button onclick="setLanguage('es')">ES</button>
+          <button onclick="setLanguage('en')">EN</button>
+        </div>
+        <a class="button header-button" href="https://wa.me/573003465970" target="_blank">
+          <img src="images/whatsapp-48.png" alt="" class="button-icon" />
+          <span class="lang-es">Reservar</span>
+          <span class="lang-en">Reserve</span>
+        </a>
+      </div>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content">
