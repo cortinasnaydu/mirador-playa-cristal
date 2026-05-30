@@ -281,3 +281,40 @@ footer {
   }
 
 }
+
+/* Begin Slider */
+
+.photo-slider-section {
+  padding: 56px 0 24px;
+  background: #0f1720;
+}
+.photo-slider {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 44px;
+}
+.photo-slider .swiper-slide {
+  height: 260px;
+  border-radius: 18px;
+  overflow: hidden;
+}
+.photo-slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.photo-slider .swiper-pagination-bullet {
+  background: #ffffff;
+  opacity: 0.45;
+}
+.photo-slider .swiper-pagination-bullet-active {
+  opacity: 1;
+}
+@media (max-width: 700px) {
+  .photo-slider .swiper-slide {
+    height: 230px;
+  }
+}
+
+/* End Slider */
+
