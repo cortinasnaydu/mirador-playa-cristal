@@ -44,3 +44,31 @@ const photoSlider = new Swiper(".photo-slider", {
     },
   },
 });
+
+function equalizeCardHeights() {
+  if (window.innerWidth < 900) {
+    document.querySelectorAll('.highlight-card').forEach(card => {
+      card.style.height = 'auto';
+    });
+    return;
+  }
+
+  const cards = document.querySelectorAll('.highlight-card');
+
+  cards.forEach(card => {
+    card.style.height = 'auto';
+  });
+
+  let tallest = 0;
+
+  cards.forEach(card => {
+    tallest = Math.max(tallest, card.offsetHeight);
+  });
+
+  cards.forEach(card => {
+    card.style.height = `${tallest}px`;
+  });
+}
+
+window.addEventListener('load', equalizeCardHeights);
+window.addEventListener('resize', equalizeCardHeights);
