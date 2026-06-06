@@ -340,15 +340,21 @@ footer {
 /* Begin Slider */
 
 .photo-slider-section {
+  position: relative;
   padding: 24px 0;
-  background:
-    linear-gradient(
-      rgba(1, 58, 75, 0.08),
-      rgba(1, 58, 75, 0.08)
-    ),
-    url("../images/mirador-topographic-pattern.svg");
-
-  background-size: cover;
+  background: var(--brand-dark-green);
+}
+.photo-slider-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../images/mirador-topographic-pattern.svg");
+  opacity: 0.5;
+  pointer-events: none;
+}
+.photo-slider-section .container {
+  position: relative;
+  z-index: 1;
 }
 .photo-slider {
   width: 100%;
@@ -386,7 +392,7 @@ footer {
 .experience-highlights {
   padding: 5rem 0;
   color: var(--text-dark);
-  padding-top: 3rem;
+  padding-top: 1.5rem;
 }
 
 .experience-highlights h2 {
@@ -414,7 +420,7 @@ footer {
 
 .highlight-image {
   width: 110px;
-  height: 110px;
+  height: 100%;
   object-fit: cover;
   border-radius: 14px;
   flex-shrink: 0;
@@ -433,14 +439,16 @@ footer {
 
 .highlight-content h3 {
   margin: 0 0 .5rem;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   text-align: center;
+  line-height: 100%;
 }
 
 .highlight-content p {
   margin: 0;
   font-size: .95rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 @media (max-width: 900px) {
