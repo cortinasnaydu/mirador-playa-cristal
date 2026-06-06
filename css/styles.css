@@ -315,3 +315,64 @@ footer {
 
 /* End Slider */
 
+/* Begin cards */
+
+
+.experience-highlights {
+  padding: 5rem 0;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.highlight-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #fff9ef;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 18px;
+}
+
+.highlight-image {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 14px;
+  flex-shrink: 0;
+}
+
+.highlight-content {
+  flex: 1;
+}
+
+.highlight-icon {
+  font-size: 2rem;
+  margin-bottom: .5rem;
+  color: #24482b;
+  text-align: center;
+}
+
+.highlight-content h3 {
+  margin: 0 0 .5rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.highlight-content p {
+  margin: 0;
+  font-size: .95rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .highlight-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* end cards */
