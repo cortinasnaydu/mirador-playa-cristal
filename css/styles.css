@@ -422,7 +422,7 @@ footer {
   width: 45%;
   align-self: stretch;
   object-fit: cover;
-  border-radius: 14px;
+  border-radius: 10px;
   flex-shrink: 0;
   /* object-position: -140px; */
 }
