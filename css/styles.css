@@ -600,6 +600,7 @@ footer {
   text-align: left;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
+.alternate-route-mobile {display: none;}
 
 .directions-bottom {
   max-width: 900px;
