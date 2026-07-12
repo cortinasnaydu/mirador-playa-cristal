@@ -257,7 +257,7 @@ h1 {
 
 .section h2 {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 0;
   text-align: center;
   font-size: clamp(2rem, 5vw, 3rem);
 }
@@ -389,7 +389,7 @@ footer {
 /* Begin cards */
 
 .experience-highlights {
-  padding: 1.5rem 0 5rem;
+  padding: 1rem 0 3rem;
   color: var(--text-dark);
 }
 
@@ -475,6 +475,7 @@ footer {
 
 .directions-section {
   background: #f7f3ea;
+  padding: 3rem 1rem
 }
 
 .directions-heading {
@@ -485,7 +486,7 @@ footer {
 
 .directions-heading p {
   max-width: 680px;
-  margin: 1rem auto 0;
+  margin: 0 auto 0;
   line-height: 1.65;
 }
 
@@ -580,14 +581,24 @@ footer {
 
 .directions-map {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-width: 0;
 }
 
 .directions-map-image {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.alternate-route {
+  width: 100%;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  text-align: left;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .directions-bottom {
@@ -612,15 +623,12 @@ footer {
   line-height: 1.15;
 }
 
-.directions-note p,
-.alternate-route p {
-  max-width: 720px;
-  margin: 0 auto;
-  line-height: 1.65;
-}
-
-.alternate-route {
-  margin-top: 2.5rem;
+.directions-note p, .alternate-route p {
+    max-width: 720px;
+    margin: 0 auto;
+    line-height: 1.65;
+    font-style: italic;
+    font-size: .9rem;
 }
 
 .directions-button {
