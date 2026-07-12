@@ -600,6 +600,7 @@ footer {
   text-align: left;
   border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
+.alternate-route-desktop p {font-style: italic; font-size: .9rem; line-height: 1.65;}
 .alternate-route-mobile {display: none;}
 
 .directions-bottom {
@@ -642,7 +643,8 @@ footer {
   .alternate-route-desktop, .directions-bottom {
   display: none;
 }
-.alternate-route-mobile {display: block;}
+.alternate-route-mobile {display: block;font-style: italic; font-size: .9rem; line-height: 1.65;}
+
   .directions-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
