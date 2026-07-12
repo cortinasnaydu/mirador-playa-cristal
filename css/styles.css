@@ -593,7 +593,7 @@ footer {
   height: auto;
 }
 
-.alternate-route {
+.alternate-route-desktop {
   width: 100%;
   margin-top: 2rem;
   padding-top: 1.75rem;
@@ -638,17 +638,25 @@ footer {
 /* Tablet */
 
 @media (max-width: 900px) {
+  .alternate-route-desktop, .directions-bottom {
+  display: none;
+}
+.alternate-route-mobile {display: block;}
   .directions-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
 
   .directions-map {
+    order: 1;
+  }
+
+  .directions-content {
     order: 2;
   }
 
   .directions-map-image {
-    max-width: 760px;
+    max-width: 47.5rem;
     margin: 0 auto;
   }
 
