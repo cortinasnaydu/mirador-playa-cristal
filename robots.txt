@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mirador-playa-cristal-tayrona.com/sitemap.xml
