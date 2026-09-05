@@ -137,7 +137,7 @@ h3 {
 .hero h1 {
   font-family: var(--font-heading);
   font-weight: 600;
-  line-height: 86%;
+  line-height: 100%;
   letter-spacing: -.03em;
 }
 
@@ -259,7 +259,8 @@ h1 {
   margin-top: 0;
   margin-bottom: 0;
   text-align: center;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.6rem, 5vw, 3rem);
+  letter-spacing: -0.02em;
 }
 
 .intro {
@@ -315,28 +316,6 @@ footer {
   color: rgba(255, 255, 255, 0.7);
 }
 
-@media (max-width: 640px) {
-  .hero {
-    min-height: 100vh;
-    padding:
-      120px 20px
-      80px;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  .section {
-    padding: 70px 20px;
-  }
-
-  .header-button {
-    padding: 9px 14px;
-    font-size: 0.85rem;
-  }
-}
-
 /* Begin Slider */
 
 .photo-slider-section {
@@ -383,13 +362,34 @@ footer {
     height: 230px;
   }
 }
+  @media (max-width: 640px) {
+  .hero {
+    min-height: 100vh;
+    padding:
+      120px 20px
+      80px;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section {
+    padding: 20px 20px;
+  }
+
+  .header-button {
+    padding: 9px 14px;
+    font-size: 0.85rem;
+  }
+}
 
 /* End Slider */
 
 /* Begin cards */
 
 .experience-highlights {
-  padding: 1rem 0 3rem;
+  padding: 1rem 0 1.5rem;
   color: var(--text-dark);
 }
 
@@ -397,7 +397,8 @@ footer {
   margin-top: 2rem;
   margin-bottom: 2rem;
   text-align: center;
-  font-size: clamp(2rem, 5vw, 3rem);
+  font-size: clamp(2.6rem, 5vw, 3rem);
+  line-height: 110%;
 }
 
 .highlight-grid {
@@ -405,7 +406,8 @@ footer {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  gap: 1rem;
+  padding: 0rem 1rem;
 }
 
 .highlight-card {
@@ -467,7 +469,17 @@ footer {
   .highlight-grid {
     grid-template-columns: 1fr;
   }
+      .alternate-route-mobile {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .alternate-route-mobile h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
 }
+
+}
+
 
 /* End cards */
 
@@ -475,7 +487,7 @@ footer {
 
 .directions-section {
   background: #f7f3ea;
-  padding: 3rem 1rem
+  padding: 1rem;
 }
 
 .directions-heading {
@@ -591,6 +603,7 @@ footer {
   display: block;
   width: 100%;
   height: auto;
+  border-radius: 1rem;
 }
 
 .alternate-route-desktop {
@@ -643,6 +656,12 @@ footer {
   .alternate-route-desktop, .directions-bottom {
   display: none;
 }
+a.button.header-button span {
+    display: none;
+}
+.site-header-actions {
+    gap: 24px;
+}
 .alternate-route-mobile {display: block;font-style: italic; font-size: .9rem; line-height: 1.65;}
 
   .directions-layout {
@@ -671,6 +690,11 @@ footer {
 /* Mobile */
 
 @media (max-width: 600px) {
+
+  .alternate-route-mobile h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0;
+}
   .directions-heading {
     margin-bottom: 2rem;
   }
@@ -717,4 +741,38 @@ footer {
   .alternate-route {
     margin-top: 2rem;
   }
+}
+
+@media (max-width: 450px) {
+
+img[src="images/2-far-shot-peninsula.webp"] {
+    object-position: right;;
+}
+img[src="images/single-room-2.webp"] {
+    object-position: -30px;
+}
+img[src="images/fish-plate.webp"] {
+    object-position: right;
+}
+
+}
+
+@media (max-width: 380px) {
+
+.site-logo img {
+    width: 150px;
+    margin-top: 33px;
+    margin-left: 8px;
+}
+.header-language-toggle button {
+    padding: 7px 9px;
+    font-size: 0.75rem;
+}
+.experience-highlights h2 {
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+.highlight-content p {
+    line-height: 140%;
+}
 }
